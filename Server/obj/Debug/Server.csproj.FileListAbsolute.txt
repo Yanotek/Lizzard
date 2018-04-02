@@ -1,0 +1,7 @@
+c:\users\joni_\source\repos\TCPTest\Server\bin\Debug\Server.exe.config
+c:\users\joni_\source\repos\TCPTest\Server\bin\Debug\Server.exe
+c:\users\joni_\source\repos\TCPTest\Server\bin\Debug\Server.pdb
+c:\users\joni_\source\repos\TCPTest\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+c:\users\joni_\source\repos\TCPTest\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+c:\users\joni_\source\repos\TCPTest\Server\obj\Debug\Server.exe
+c:\users\joni_\source\repos\TCPTest\Server\obj\Debug\Server.pdb

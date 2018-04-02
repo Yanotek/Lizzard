@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3724230D-4C57-4DA4-AE2C-7E799A6A004E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Commands\Command.cs" />
+    <Compile Include="Core\Commands\RDP\Remote.cs" />
+    <Compile Include="Core\Commands\RDP\RemoteScreenCommand.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\AxRDPViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\AxRDPViewerEventMulticaster.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnApplicationCloseEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnApplicationOpenEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnApplicationUpdateEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnAttendeeConnectedEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnAttendeeDisconnectedEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnAttendeeUpdateEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnChannelDataReceivedEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnChannelDataSentEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnConnectionTerminatedEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnControlLevelChangeRequestEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnErrorEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnFocusReleasedEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnSharedDesktopSettingsChangedEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnSharedRectChangedEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnWindowCloseEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnWindowOpenEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\AxInterop.RDPCOMAPILib\_IRDPSessionEvents_OnWindowUpdateEvent.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\ATTENDEE_DISCONNECT_REASON.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\CHANNEL_ACCESS_ENUM.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\CHANNEL_FLAGS.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\CHANNEL_PRIORITY.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\CTRL_LEVEL.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIApplication.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIApplicationFilter.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIApplicationList.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIAttendee.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIAttendeeDisconnectInfo.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIAttendeeManager.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIInvitation.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIInvitationManager.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPISessionProperties.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPISharingSession.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPITcpConnectionInfo.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIViewer.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIVirtualChannel.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIVirtualChannelManager.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIWindow.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\IRDPSRAPIWindowList.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPENCOMAPI_ATTENDEE_FLAGS.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPENCOMAPI_CONSTANTS.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSession.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSessionClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIApplication.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIApplicationClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIApplicationFilter.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIApplicationFilterClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIApplicationList.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIApplicationListClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIAttendee.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIAttendeeClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIAttendeeDisconnectInfo.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIAttendeeDisconnectInfoClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIAttendeeManager.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIAttendeeManagerClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIInvitation.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIInvitationClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIInvitationManager.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIInvitationManagerClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPISessionProperties.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPISessionPropertiesClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPITcpConnectionInfo.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPITcpConnectionInfoClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIWindow.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIWindowClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIWindowList.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPIWindowListClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPI_APP_FLAGS.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPSRAPI_WND_FLAGS.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPViewer.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\RDPViewerClass.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\_IRDPSessionEvents.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\_IRDPSessionEvents_Event.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\_IRDPSessionEvents_EventProvider.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\_IRDPSessionEvents_SinkHelper.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0001.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0002.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0003.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0004.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0005.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0006.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0007.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0008.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPCOMAPILib\__MIDL___MIDL_itf_rdpencomapi_0000_0001_0009.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnApplicationCloseEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnApplicationOpenEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnApplicationUpdateEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnAttendeeConnectedEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnAttendeeDisconnectedEventHand.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnAttendeeUpdateEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnChannelDataReceivedEventHandl.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnChannelDataSentEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnConnectionAuthenticatedEventH.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnConnectionEstablishedEventHan.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnConnectionFailedEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnConnectionTerminatedEventHand.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnControlLevelChangeRequestEven.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnErrorEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnFocusReleasedEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnGraphicsStreamPausedEventHand.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnGraphicsStreamResumedEventHan.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnSharedDesktopSettingsChangedE.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnSharedRectChangedEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnWindowCloseEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnWindowOpenEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\RDPSessionEvents\_IRDPSessionEvents_OnWindowUpdateEventHandler.cs" />
+    <Compile Include="Core\Commands\RDP\WinApi\SupportUtils.cs" />
+    <Compile Include="Core\Commands\ShowMessageBox.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
